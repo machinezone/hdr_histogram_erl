@@ -511,7 +511,10 @@ bool hdr_iter_next(struct hdr_iter* iter)
         return false;
     }
 
-    move_next(iter);
+    if (!move_next(iter))
+    {
+        return false;
+    }
 
     return true;
 }
